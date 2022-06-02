@@ -51,7 +51,6 @@ const WeatherDetail: React.FC = () => {
   const getDayOfWeekFromEpoch = (epoch: number): string => {
     const now = new Date(0);
     now.setUTCSeconds(epoch);
-    console.log(now);
     return now.toLocaleString('en-GB', {
       day: 'numeric',
       weekday: 'long',
