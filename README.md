@@ -4,7 +4,7 @@
 
 # Midudev & RapidApi Hackathon 💻
 
-{blanbaknakanka}
+Created for Midudev
 
 ## About 🤓
 
@@ -30,7 +30,7 @@ weather-app-rapiapi/src
 ```
 ## Live preview 📳
 
-[Deployed at Vercel](https://nuwe-summer1.netlify.app)
+[Deployed at Vercel](https://judith-weather.vercel.app/)
 
 
 ## Run this project 🏃‍♀️
