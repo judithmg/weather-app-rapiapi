@@ -21,7 +21,7 @@ const Dropdown: React.FC<Props> = ({ cities, setDropdown }) => {
 
   return (
     <Menu>
-      {cities ? (
+      {cities.length ? (
         cities.map((city) => (
           <WeatherCard
             onClick={() => onClickCity(city)}
