@@ -20,8 +20,8 @@ import { H2, H3, IconAndText } from './components/Text';
 
 const WeatherDetail: React.FC = () => {
   const [day, setDay] = useState<ForecastDay>();
-  const [latitude, setLatitude] = useState<number>();
-  const [longitude, setLongitude] = useState<number>();
+  const [latitude, setLatitude] = useState<number>(41);
+  const [longitude, setLongitude] = useState<number>(2);
   const [content, setContent] = useState<JSX.Element | null>(null);
 
   const cities = useStore((state) => state.cities);
