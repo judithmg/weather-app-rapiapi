@@ -19,6 +19,6 @@ export const HourContainer = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: ${Colors.white};
     border-radius: 10px;
-    border: 3px solid rgb(255, 217, 223);
+    border: 3px solid ${Colors.background};
   }
 `;

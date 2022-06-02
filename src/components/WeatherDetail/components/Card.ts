@@ -9,6 +9,7 @@ export const Card = styled.div<CardProps>`
   border: 2px solid ${Colors.black};
   box-shadow: 2px 2px ${Colors.black};
   padding: 5px;
+  transition: all 0.3s ease-in-out;
   ${(props) =>
     props.backgroundColor && `background-color: ${props.backgroundColor}`};
 
@@ -28,6 +29,11 @@ export const HourCard = styled.div`
   border: 3px solid ${Colors.black};
   box-shadow: 3px 3px ${Colors.black};
   scroll-snap-align: start;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: ${Colors.green};
+  }
 `;
 
 export const SunriseSunsetCard = styled.div`
@@ -36,6 +42,7 @@ export const SunriseSunsetCard = styled.div`
   align-items: center;
   width: 70%;
   margin: 10px;
+
   svg {
     margin-top: 5px;
   }
@@ -50,12 +57,23 @@ export const SunriseSunsetCard = styled.div`
   }
 `;
 
-export const DailyCard = styled.div`
+export const DailyCardRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+
   img {
     width: 40px;
+  }
+
+  &:hover {
+    background-color: ${Colors.yellow};
   }
 `;

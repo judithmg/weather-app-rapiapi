@@ -9,18 +9,24 @@ import { ForecastDay, Hour, Weather } from 'src/types/weather';
 import useStore from '~/src/store/store';
 import getForecastUrl from '~/src/utils/getForecastUrl';
 
-import { Card, DailyCard, HourCard, SunriseSunsetCard } from './components/Card';
+import HighlightText from '../HighlightText';
+import { Card, DailyCardRow, HourCard, SunriseSunsetCard } from './components/Card';
 import Component from './components/Component';
 import { HourContainer } from './components/Container';
 import Detail from './components/Detail';
 import Header from './components/Header';
 import Row from './components/Row';
-import { H1, H2, H3, IconAndText } from './components/Text';
+import { H2, H3, IconAndText } from './components/Text';
 
 const WeatherDetail: React.FC = () => {
   const [day, setDay] = useState<ForecastDay>();
   const [latitude, setLatitude] = useState<number>();
   const [longitude, setLongitude] = useState<number>();
+  const [content, setContent] = useState<JSX.Element | null>(null);
+
+  const cities = useStore((state) => state.cities);
+  const url = getForecastUrl(cities, latitude, longitude);
+  const { data, loading } = useFetch<Weather>(url, headers);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -30,12 +36,6 @@ const WeatherDetail: React.FC = () => {
       },
     );
   }, []);
-
-  const cities = useStore((state) => state.cities);
-  const url = getForecastUrl(cities, latitude, longitude);
-  const { data, loading } = useFetch<Weather>(url, headers);
-  console.log(data);
-  const [content, setContent] = useState<JSX.Element | null>(null);
 
   useEffect(() => {
     if (data?.current) {
@@ -48,16 +48,28 @@ const WeatherDetail: React.FC = () => {
   const onClickForecast = (index: number) =>
     data && setDay(data?.forecast.forecastday[index]);
 
-  const renderTooltipData = (hour: Hour): JSX.Element => {
-    return (
-      <>
-        <p>Precipitation: {hour.chance_of_rain}%</p>
-        <p>Wind: {hour.wind_kph} km/h</p>
-        <p>Humidity: {hour.humidity}%</p>
-        <p>Feels like {hour.feelslike_c} °C</p>
-      </>
-    );
+  const getDayOfWeekFromEpoch = (epoch: number): string => {
+    const now = new Date(0);
+    now.setUTCSeconds(epoch);
+    console.log(now);
+    return now.toLocaleString('en-GB', {
+      day: 'numeric',
+      weekday: 'long',
+    });
   };
+
+  const renderForecast = (
+    forecast: ForecastDay,
+    index: number,
+  ): JSX.Element => (
+    <DailyCardRow onClick={() => onClickForecast(index)} key={forecast.date}>
+      <p>{getDayOfWeekFromEpoch(forecast.date_epoch)}</p>
+      <p>
+        {forecast.day.mintemp_c}°C | {forecast.day.maxtemp_c}°C
+      </p>
+      <img src={forecast.day.condition.icon}></img>
+    </DailyCardRow>
+  );
 
   const renderHourCard = (hour: Hour, index: number): JSX.Element => (
     <HourCard
@@ -86,15 +98,16 @@ const WeatherDetail: React.FC = () => {
     </SunriseSunsetCard>
   );
 
-  const renderForecast = (forecast: ForecastDay, index: number) => (
-    <DailyCard onClick={() => onClickForecast(index)} key={forecast.date}>
-      <p>{forecast.date}</p>
-      <p>
-        {forecast.day.mintemp_c}°C | {forecast.day.maxtemp_c}°C
-      </p>
-      <img src={forecast.day.condition.icon}></img>
-    </DailyCard>
-  );
+  const renderTooltipData = (hour: Hour): JSX.Element => {
+    return (
+      <>
+        <p>Precipitation: {hour.chance_of_rain}%</p>
+        <p>Wind: {hour.wind_kph} km/h</p>
+        <p>Humidity: {hour.humidity}%</p>
+        <p>Feels like {hour.feelslike_c} °C</p>
+      </>
+    );
+  };
 
   return loading || !day ? (
     <div>Loading...</div>
@@ -103,7 +116,7 @@ const WeatherDetail: React.FC = () => {
       <Component>
         <Header>
           <div>
-            <H1>{data?.location.name}</H1>
+            <HighlightText size={50}>{data?.location.name}</HighlightText>
             <H2>
               {data?.current.temp_c}°C
               <img src={data?.current.condition.icon}></img>
@@ -115,7 +128,7 @@ const WeatherDetail: React.FC = () => {
 
       <Component>
         <Card backgroundColor={Colors.green}>
-          <h2>Sunrise and Sunset</h2>
+          <HighlightText>Sunrise and Sunset</HighlightText>
           <Row>
             {data && renderSunriseSunsetCard(day?.astro.sunrise)}
             {data && renderSunriseSunsetCard(day?.astro.sunset, false)}

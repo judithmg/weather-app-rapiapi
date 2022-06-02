@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useEffect, useRef } from 'react';
 import { IoSearch } from 'react-icons/io5';
 import * as Colors from 'src/constants/colors';
 import styled from 'styled-components';
@@ -48,9 +48,17 @@ const InputStyled = styled.div`
 `;
 
 const Input: React.FC<Props> = ({ placeholder, handleChange }) => {
+  const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus();
+    }
+  }, []);
+
   return (
     <InputStyled>
-      <input placeholder={placeholder} onChange={handleChange} />
+      <input ref={ref} placeholder={placeholder} onChange={handleChange} />
       <IoSearch size={24} />
     </InputStyled>
   );
