@@ -6,20 +6,6 @@
   --background: rgb(255, 238, 240);
 }
 
-.App {
-  font-family: 'Noto Sans', sans-serif;
-  cursor: default;
-  position: relative;
-  background-color: var(--background);
-  width: 400px;
-  max-width: 100%;
-  display: block;
-  border: 3px solid var(--black);
-  border-radius: 10px;
-  box-shadow: 5px 5px var(--black);
-  overflow: hidden;
-}
-
 nav {
   position: sticky;
   background-color: var(--black);
@@ -27,30 +13,43 @@ nav {
   height: 60px;
 }
 
-.content {
-  min-height: 300px;
-  max-height: 80vh;
-  overflow-y: auto;
+.App {
+  font-family: 'Noto Sans', sans-serif;
+  cursor: default;
+  position: relative;
+  background-color: var(--background);
+  width: 100vw;
+  display: block;
+  height: 100vh;
+  overflow-x: hidden;
+
   scrollbar-width: auto;
   scrollbar-color: white;
 }
 
-.content::-webkit-scrollbar {
+.App::-webkit-scrollbar {
   width: 16px;
 }
 
-.content::-webkit-scrollbar-track {
+.App::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.content::-webkit-scrollbar-thumb {
+.App::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 10px;
   border: 3px solid var(--background);
 }
 
 @media (min-width: 600px) {
+  body {
+    overflow: hidden;
+  }
   .App {
-    background-color: red;
+    height: 99vh;
+    border: 3px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 5px 5px var(--black);
+    width: 600px;
   }
 }
