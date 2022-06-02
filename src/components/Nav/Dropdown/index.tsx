@@ -22,11 +22,12 @@ const Dropdown: React.FC<Props> = ({ cities, setDropdown }) => {
   return (
     <Menu>
       {cities.length ? (
-        cities.map((city) => (
+        cities.map((city, index) => (
           <WeatherCard
             onClick={() => onClickCity(city)}
             city={city.url}
             key={city.url}
+            index={index}
           />
         ))
       ) : (
