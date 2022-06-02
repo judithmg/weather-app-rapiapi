@@ -18,7 +18,7 @@ The app is responsive, with two different views (mobile and deskptop).
 
 * Click on hamburger menu to see previous searches. They'll be saved in `localStorage` thanks to `zustand`'s `persist` middleware.
 * Search for any city using `RapidApi`'s API
-* You'll be able to check today's weather, as well as 3 days' forecast!
+* You'll be able to check today's weather, as well as 3 days' forecast! Click on each day to check the forecast.
 * Chart created with `react-chartjs-2` showing today's temperature
 * See today's temperature hourly
 
