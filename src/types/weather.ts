@@ -45,7 +45,7 @@ export interface Weather {
 
 export interface ForecastDay {
   date: string;
-  date_epoch: Date;
+  date_epoch: number;
   day: Day;
   astro: Astro;
   hour: Hour[];
