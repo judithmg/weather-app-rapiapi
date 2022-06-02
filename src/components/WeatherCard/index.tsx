@@ -15,7 +15,7 @@ const WeatherCard: React.FC<Props> = ({ city, onClick, index }) => {
     hidden: {
       opacity: 0,
     },
-    visible: ({ delay }) => ({
+    visible: (delay: number) => ({
       opacity: 1,
       transition: {
         delay,
