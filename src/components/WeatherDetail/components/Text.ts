@@ -35,3 +35,13 @@ export const H3 = styled.h3`
   right: 0px;
   transform-origin: top right;
 `;
+
+export const IconAndText = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  svg {
+    margin-right: 10px;
+  }
+`;
