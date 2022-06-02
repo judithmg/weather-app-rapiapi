@@ -1,9 +1,5 @@
-<img src="https://nuwe.io/_next/image?url=%2Flogo_color.png&w=64&q=75"/>
-
-<img src="https://github.com/judithmg/weather-app-rapiapi
-/blob/main/public/logo.png?raw=true"/>
-<img src="https://github.com/judithmg/weather-app-rapiapi
-/blob/main/public/rapid-api.png?raw=true"/>
+<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/logo.png?raw=true"/>
+<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/rapid-api.png?raw=true"/>
 
 
 # Midudev & RapidApi Hackathon 💻
@@ -12,13 +8,11 @@
 
 ## About 🤓
 
-<img src="https://github.com/judithmg/weather-app-rapiapi
-/blob/main/public/mobb.png?raw=true"/>
+<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/mobb.png?raw=true"/>
 
 klsdjkldjkldjsfl
 
-<img src="https://github.com/judithmg/weather-app-rapiapi
-/blob/main/public/deskt.png?raw=true"/>
+<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/deskt.png?raw=true"/>
 
 
 
