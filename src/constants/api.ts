@@ -1,6 +1,6 @@
 export const headers = {
-  'X-RapidAPI-Host': process.env.RAPIDAPI_HOST,
-  'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
+  'X-RapidAPI-Host': import.meta.env.VITE_RAPIDAPI_HOST,
+  'X-RapidAPI-Key': import.meta.env.VITE_RAPIDAPI_KEY,
 };
 
 export const find_city_url =
