@@ -1,6 +1,6 @@
 export const headers = {
-  'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
-  'X-RapidAPI-Key': '1a1c7ae27bmsh856a74c6efaa785p1c2aa3jsndeb9abdb9fdd',
+  'X-RapidAPI-Host': process.env.RAPIDAPI_HOST,
+  'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
 };
 
 export const find_city_url =
