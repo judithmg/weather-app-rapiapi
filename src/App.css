@@ -46,7 +46,7 @@ nav {
     overflow: hidden;
   }
   .App {
-    height: 99vh;
+    height: 90vh;
     border: 3px solid var(--black);
     border-radius: 10px;
     box-shadow: 5px 5px var(--black);
