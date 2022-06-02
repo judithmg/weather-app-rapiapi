@@ -1,5 +1,5 @@
-<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/logo.png?raw=true"/>
-<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/rapid-api.png?raw=true"/>
+<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/logo.png?raw=true" width='200'/>
+<img src="https://github.com/judithmg/weather-app-rapiapi/blob/main/public/rapid-api.png?raw=true" width='200'/>
 
 
 # Midudev & RapidApi Hackathon 💻
