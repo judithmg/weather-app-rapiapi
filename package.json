@@ -6,6 +6,7 @@
     "testEnvironment": "jsdom"
   },
   "scripts": {
+    "eslint": "eslint --ext .ts,.tsx,.js --cache --cache-location .eslint/cache",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
