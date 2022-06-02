@@ -2,6 +2,8 @@ import WeatherCard from 'src/components/WeatherCard';
 import useStore from 'src/store/store';
 import { City } from 'src/types/weather';
 
+import HighlightText from '../../HighlightText';
+import Card from '../../WeatherCard/components/Card';
 import Menu from '../Menu';
 import { Props } from './types';
 
@@ -12,16 +14,29 @@ const Dropdown: React.FC<Props> = ({ cities, setDropdown }) => {
     setCity(city);
     setDropdown(false);
   };
+
+  const onClick = () => {
+    setDropdown(false);
+  };
+
   return (
     <Menu>
-      {cities &&
+      {cities ? (
         cities.map((city) => (
           <WeatherCard
             onClick={() => onClickCity(city)}
             city={city.url}
             key={city.url}
           />
-        ))}
+        ))
+      ) : (
+        <Card onClick={onClick}>
+          <HighlightText size={20}>Your search history is clear!</HighlightText>
+
+          <p>Use the search option. Your searches will be saved here</p>
+          <p>on each session.</p>
+        </Card>
+      )}
       ;
     </Menu>
   );

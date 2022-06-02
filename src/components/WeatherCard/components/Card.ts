@@ -26,4 +26,8 @@ export default styled.div`
     background-color: ${Colors.blue};
     color: ${Colors.white};
   }
+
+  p {
+    color: ${Colors.black};
+  }
 `;
