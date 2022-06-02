@@ -1,5 +1,10 @@
-export const white = '#fff';
+export const background = 'rgb(255, 238, 240)';
+export const black = '#1F3754';
+export const blue = '#DBE4ED';
+export const green = '#e8f1d6';
 export const lightgray = '#CBC8CA';
-export const black = '#000';
-export const sunrise = '#ff9c47';
 export const moonset = '#4752ff';
+export const sunrise = '#ff9c47';
+export const violet = '#ede0f1';
+export const white = '#fff';
+export const yellow = '#ffface';
