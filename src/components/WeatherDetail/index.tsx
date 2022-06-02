@@ -72,6 +72,7 @@ const WeatherDetail: React.FC = () => {
 
   const renderHourCard = (hour: Hour, index: number): JSX.Element => (
     <HourCard
+      key={`${hour.condition.text}-${index}`}
       onMouseEnter={() => setContent(renderTooltipData(hour))}
       onMouseLeave={() => setContent(null)}>
       <p>{getHour(index)}</p>

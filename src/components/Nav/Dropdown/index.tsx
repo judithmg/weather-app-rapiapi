@@ -26,7 +26,7 @@ const Dropdown: React.FC<Props> = ({ cities, setDropdown }) => {
           <WeatherCard
             onClick={() => onClickCity(city)}
             city={city.url}
-            key={city.url}
+            key={`${city.url}-${index}`}
             index={index}
           />
         ))

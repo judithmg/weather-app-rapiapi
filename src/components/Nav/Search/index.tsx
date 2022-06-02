@@ -66,7 +66,9 @@ const Search: React.FC<Props> = ({ setSearch }) => {
         return (
           <ul>
             {result.map((city: City, index: number) => (
-              <ListItem onClick={() => onClickCity(city)} key={index}>
+              <ListItem
+                onClick={() => onClickCity(city)}
+                key={`${city.url}-${index}`}>
                 <p>{city.name}</p>
               </ListItem>
             ))}
