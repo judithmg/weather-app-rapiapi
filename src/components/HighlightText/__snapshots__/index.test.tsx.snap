@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighlightText renders as expected with state Default 1`] = `
+<strong
+  className="sc-bczRLJ dqqmOe"
+  color="red"
+>
+  Tis is my HighlightText
+</strong>
+`;
