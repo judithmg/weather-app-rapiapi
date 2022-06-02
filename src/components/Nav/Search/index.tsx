@@ -34,7 +34,7 @@ const Search: React.FC<Props> = ({ setSearch }) => {
   const [city, setCity] = useState('');
   const [result, setResult] = useState<City[]>([]);
 
-  const addCity = useStore((state) => state.addCity);
+  const addCity = useStore((state) => state.setCity);
 
   const url = `${find_city_url}${city}`;
   const { data, loading = false } = useFetch<City[]>(url, headers);

@@ -22,10 +22,12 @@ const useStore = create<Store>()(
         },
         setCity: (city: City) => {
           set((state) => {
-            state.cities.filter((item) => item.id !== city.id);
+            const newState = state.cities.filter(
+              (item) => item.name !== city.name,
+            );
             return {
               ...state,
-              cities: [...state.cities, city],
+              cities: [...newState, city],
             };
           });
         },
